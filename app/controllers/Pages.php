@@ -1,12 +1,25 @@
 <?php
-  class Pages {
+  class Pages extends Controller {
     public function __construct(){
+      $this->postModel = $this->model('Post');
+    }
+    
+    public function index(){
+      $posts = $this->postModel->getPosts();
+      
+      $data = [
+        'title' => 'Welcome',
+        'posts' => $posts
+      ];
+     
+      $this->view('pages/index', $data);
     }
 
-    public function Index(){
-    }
+    public function about(){
+      $data = [
+        'title' => 'About Us'
+      ];
 
-    public function About(){
-      echo 'oggo';
+      $this->view('pages/about', $data);
     }
   }
