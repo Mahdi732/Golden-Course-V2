@@ -1,4 +1,5 @@
 <?php
-  require_once 'libraries/core.php';
-  require_once 'libraries/controller.php';
-  require_once 'libraries/database.php';
+  require_once "config/config.php";
+  spl_autoload_register(function($class_name) {
+      require_once "libraries/" . $class_name . ".php";
+  });
