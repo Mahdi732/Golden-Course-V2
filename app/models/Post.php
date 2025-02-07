@@ -7,7 +7,7 @@
     }
 
     public function getPosts(){
-      $this->db->query("SELECT * FROM posts");
+  $this->db->query("SELECT * FROM courses");
 
       return $this->db->resultSet();
       
