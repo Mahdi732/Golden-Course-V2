@@ -37,12 +37,12 @@
                             <a href="course.php" class="dropdown-item">Course</a>
                             <a href="price.php" class="dropdown-item">Abonement</a>
                         </div>
-                    </div> 
+                    </div>
                 </div>
                 <?php
                 if (isset($_SESSION['user']) && $_SESSION['user']['role'] === "Admin") {
                     echo '<div class="d-flex align-items-center">
-                                <a href="admin.php" class="d-flex align-items-center " >
+                                <a href="/Pages/admin" class="d-flex align-items-center " >
                                     <img src="https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_1280.png" alt="Profile" class="rounded-circle" style="width: 40px; height: 40px;">
                                 </a>
                         </div>';
@@ -57,7 +57,7 @@
                         echo 'You Are Not Active';
                     }else{
                         echo '<div class="d-flex align-items-center">
-                                <a href="teacher.php" class="d-flex align-items-center " >
+                                <a href="Pages/teacher" class="d-flex align-items-center " >
                                     <img src="https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_1280.png" alt="Profile" class="rounded-circle" style="width: 40px; height: 40px;">
                                 </a>
                         </div>';
@@ -66,7 +66,7 @@
                     echo '<button type="button" class="btn btn-link text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal">
                             <i class="fa fa-search"></i>
                         </button>
-                        <a href="login.php" class="btn btn-primary ms-3">Login</a>';
+                        <a href="Pages/login" class="btn btn-primary ms-3">Login</a>';
                 }
                 ?>
             </div>
