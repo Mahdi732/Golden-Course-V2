@@ -50,21 +50,18 @@ class Database {
         $this->stmt->bindValue($param, $value, $type);
     }
 
-    // Execute the query
     public function execute() {
         return $this->stmt->execute();
     }
 
-    // Fetch all results as an object
-    public function resultSet() {
+    public function resultSet($fetchMode = PDO::FETCH_OBJ) {
         $this->execute();
-        return $this->stmt->fetchAll(PDO::FETCH_OBJ);
+        return $this->stmt->fetchAll($fetchMode);
     }
 
-    // Fetch a single result as an object
-    public function single() {
+    public function single($fetchMode = PDO::FETCH_OBJ) {
         $this->execute();
-        return $this->stmt->fetch(PDO::FETCH_OBJ);
+        return $this->stmt->fetch($fetchMode);
     }
 
     public function fetchColumn() {
@@ -72,12 +69,10 @@ class Database {
         return $this->stmt->fetchColumn();
     }
 
-    // Get row count of results
     public function rowCount() {
         return $this->stmt->rowCount();
     }
 
-    // Get the last inserted ID
     public function lastInsertId() {
         return $this->dbh->lastInsertId();
     }
